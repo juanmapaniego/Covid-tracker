@@ -208,6 +208,29 @@ public class CovidArgentina {
 
     @Override
     public String toString() {
-        return this.id + " " + this.sexo;
+        return "CovidArgentina{" +
+                "id=" + id +
+                ", sexo=" + sexo +
+                ", edad='" + edad + '\'' +
+                ", pais_residencia='" + pais_residencia + '\'' +
+                ", provincia_residencia='" + provincia_residencia + '\'' +
+                ", prov_residencia_id=" + prov_residencia_id +
+                ", provincia_carga='" + provincia_carga + '\'' +
+                ", prov_carga_id=" + prov_carga_id +
+                ", fis='" + fis + '\'' +
+                ", antecedente_epidemiologico='" + antecedente_epidemiologico + '\'' +
+                ", fecha_apertura=" + fecha_apertura +
+                ", sepi_apertura=" + sepi_apertura +
+                ", fecha_internacion=" + fecha_internacion +
+                ", cuidado_intensivo='" + cuidado_intensivo + '\'' +
+                ", fecha_cui_intensivo=" + fecha_cui_intensivo +
+                ", fallecido='" + fallecido + '\'' +
+                ", fecha_fallecimiento=" + fecha_fallecimiento +
+                ", asist_resp_mecanica='" + asist_resp_mecanica + '\'' +
+                ", origen_financiamiento='" + origen_financiamiento + '\'' +
+                ", clasificacion='" + clasificacion + '\'' +
+                ", clasificacion_resumen='" + clasificacion_resumen + '\'' +
+                ", fecha_diagnostico=" + fecha_diagnostico +
+                '}';
     }
 }

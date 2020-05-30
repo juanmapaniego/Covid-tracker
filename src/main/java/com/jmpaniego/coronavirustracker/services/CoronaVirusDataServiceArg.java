@@ -22,6 +22,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class CoronaVirusDataServiceArg {
@@ -80,13 +81,13 @@ public class CoronaVirusDataServiceArg {
             covid.setClasificacion(record.get("clasificacion"));
             covid.setClasificacion_resumen(record.get("clasificacion_resumen"));
             fecha = record.get("fecha_diagnostico");
-            if(FormattedDateMatcher.matches(fecha)){
+            if(FormattedDateMatcher.matches(fecha)) {
                 covid.setFecha_diagnostico(sdfIso8601.parse(fecha));
             }
-            newStats.stream().map(r -> r.getFallecido()).forEach(System.out::println);
             newStats.add(covid);
         }
         this.allStats = newStats;
+
     }
 
     public List<CovidArgentina> getAllStats() {
