@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -52,6 +53,9 @@ public class HomeController {
             prov.setFallecidos((int) e.getValue().stream().filter(r -> r.getFallecido().equals("SI")).count());
             return prov;
         }).collect(Collectors.toList());
+
+        listaPorProv.sort(Comparator.comparingInt(CovidProvincia::getSospechosos).reversed());
+
         model.addAttribute("listaPorProv",listaPorProv);
         return "arg";
     }
